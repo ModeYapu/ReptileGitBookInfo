@@ -246,7 +246,6 @@ namespace ReptileGitBookInfo
         }
         #endregion
 
-
         #region 公共方法
         /// <summary>
         /// 发送请求
