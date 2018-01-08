@@ -348,7 +348,6 @@ namespace testRegex
             Console.WriteLine(Regex.IsMatch(strHeroes.ToString(), regexTr));
             Console.WriteLine("实例一:" + newTr);
         }
-
         private static void Test1()
         {
             var password = "1234";
