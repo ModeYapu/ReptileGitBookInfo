@@ -16,7 +16,7 @@ namespace TrueNewFile
             while (true)
             {
                 TestNewFile.btnOk_Click(br);//真实文件类型
-                Console.WriteLine(br.ToString());
+                Console.WriteLine("");
             }
             Console.ReadKey();
         }
