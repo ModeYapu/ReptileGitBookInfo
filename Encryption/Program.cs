@@ -139,34 +139,9 @@ namespace Encryption
         }
         #endregion
 
-        private static void SetPassword(string user, string userPassword)
-        {
-            string pwdToHash = userPassword + "^Y8~JJ"; // ^Y8~JJ is my hard-coded salt
-            string hashToStoreInDatabase = BCrypt.HashPassword(pwdToHash, BCrypt.GenerateSalt());           
-        }
-
-        private static bool DoesPasswordMatch(string hashedPwdFromDatabase, string userEnteredPassword)
-        {
-            return BCrypt.CheckPassword(userEnteredPassword + "^Y8~JJ", hashedPwdFromDatabase);
-        }
+       
     }
-    public class Hashing
-    {
-        private static string GetRandomSalt()
-        {
-            return BCrypt.GenerateSalt(12);
-        }
-
-        public static string HashPassword(string password)
-        {
-            return BCrypt.HashPassword(password, GetRandomSalt());
-        }
-
-        public static bool ValidatePassword(string password, string correctHash)
-        {
-            return BCrypt.Verify(password, correctHash);
-        }
-    }
+    
     public class Rfc2898PasswordEncoder
     {
         private int _byteLength = 160 / 8; // 160 bit hash length

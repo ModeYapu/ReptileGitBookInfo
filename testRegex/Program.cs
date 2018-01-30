@@ -1,6 +1,7 @@
 ﻿using httprequest;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -556,6 +557,19 @@ namespace testRegex
             {
                 //Console.WriteLine("字符不为数字{0}",messageInfo);
                 Console.ReadKey();
+            }
+        }
+
+        public void DeleteFile(string path)
+        {
+            FileAttributes attr = File.GetAttributes(path);
+            if (attr == FileAttributes.Directory)
+            {
+                Directory.Delete(path, true);
+            }
+            else
+            {
+                File.Delete(path);
             }
         }
     }
